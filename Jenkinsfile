@@ -32,7 +32,7 @@ pipeline {
                   "fields": { \
                     "summary": "Main order flow broken", \
                     "parent": { \
-                      "key": "TS"
+                      "key": "TS" \
                     }
                   }
                 }
