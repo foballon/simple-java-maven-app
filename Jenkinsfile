@@ -5,11 +5,17 @@ pipeline {
             args '-v /root/.m2:/root/.m2' 
         }
     }
-    
+
+
     stages {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
+            }
+        }
+        stage('Slack') {
+            steps {
+                slackSend(channel: "test-example", message: "https://www.nytimes.com", sendAsText: true)
             }
         }
         stage('Test') {
