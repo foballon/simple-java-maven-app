@@ -35,7 +35,7 @@ pipeline {
                       "key": "TS" \
                     } \
                   } \
-                }
+                } \
             }
             post {
                 always {
