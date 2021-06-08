@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sh 'mvn test'
                 slackSend(channel: "test-example", message: "Test Success", sendAsText: true)
-                sh curl --request POST,
+                sh curl --request POST
                   --url 'https://globetelecom.atlassian.net/rest/api/3/issue',
                   --user 'foballon@globe.com.ph:28D8cTzDM1AgpzeAoaHTEFA6',
                   --header 'Accept: application/json',
