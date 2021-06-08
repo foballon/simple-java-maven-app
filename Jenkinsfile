@@ -27,15 +27,7 @@ pipeline {
                   --user 'foballon@globe.com.ph:28D8cTzDM1AgpzeAoaHTEFA6' \
                   --header 'Accept: application/json' \
                   --header 'Content-Type: application/json' \
-                  --data '{ \
-                  "update": {}, \
-                  "fields": { \
-                    "summary": "Main order flow broken", \
-                    "parent": { \
-                      "key": "TS" \
-                    } \
-                  } \
-                } \
+                  --data '{ "update": {}, "fields": { "summary": "Main order flow broken", "parent": { "key": "TS } } }
             }
             post {
                 always {
