@@ -33,8 +33,8 @@ pipeline {
                     "summary": "Main order flow broken", \
                     "parent": { \
                       "key": "TS" \
-                    }
-                  }
+                    } \
+                  } \
                 }
             }
             post {
