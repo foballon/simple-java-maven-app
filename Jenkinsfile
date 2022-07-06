@@ -39,11 +39,13 @@ pipeline {
             }
         }
         stage('workspacecleanup') {
-            cleanWs()
-            sh """
-                pwd
-                ls -lrt         
-            """
+            steps {
+                cleanWs()
+                sh """
+                    pwd
+                    ls -lrt         
+                """
+            }   
         }           
     }
 }
