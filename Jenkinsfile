@@ -14,6 +14,15 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+        stage('Check Artifact') {
+            steps {
+                sh """ 
+                    pwd
+                    ls -lrt
+                    cp target/my-app-1.0-SNAPSHOT.jar . 
+                """
+            }
+        }
         stage('Test') {
             steps {
                 sh 'mvn test'
@@ -29,5 +38,12 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh' 
             }
         }
+        stage('workspacecleanup') {
+            cleanWs()
+            sh """
+                pwd
+                ls -lrt         
+            """
+        }           
     }
 }
