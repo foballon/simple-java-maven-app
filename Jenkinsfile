@@ -45,6 +45,7 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh' 
             }
         }
+        /*
         stage('workspacecleanup') {
             steps {
                 cleanWs()
@@ -53,6 +54,7 @@ pipeline {
                     ls -lrt         
                 """
             }   
-        }           
+        }          
+        */ 
     }
 }
