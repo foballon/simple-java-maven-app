@@ -6,6 +6,10 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     */
+    tools { 
+      maven 'MAVEN_HOME' 
+      jdk 'jdk8' 
+    }
     options {
         skipStagesAfterUnstable()
     }
