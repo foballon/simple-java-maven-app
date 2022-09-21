@@ -30,7 +30,7 @@ pipeline {
         }
         stage('Upload Artifact'){
             steps {
-                sh 'mvn deploy'
+                sh 'mvn deploy -s settings.xml'
             }
         }
         /*
