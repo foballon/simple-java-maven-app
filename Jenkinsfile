@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean install -s settings.xml'
+                sh 'mvn clean install -s settings.xml'
             }
         }
         stage('Check Artifact') {
