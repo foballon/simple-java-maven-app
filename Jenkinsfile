@@ -22,7 +22,6 @@ pipeline {
         stage('Check Artifact') {
             steps {
                 sh """ 
-                    ping google.com
                     pwd
                     ls -lrt
                     cp target/my-app-1.0-SNAPSHOT.jar . 
