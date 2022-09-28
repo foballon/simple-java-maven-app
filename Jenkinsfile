@@ -51,6 +51,7 @@ pipeline {
                 sh """
                      curl -u faemillelyn.ballon@dxc.com:#Limitless4499 -X GET \
                     "https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot-local/mycompany/my-app-1.0-SNAPSHOT.jar"
+                """
             }
         }
         /*
