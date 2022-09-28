@@ -28,9 +28,20 @@ pipeline {
                 """
             }
         }
+        /*
         stage('Upload Artifact'){
             steps {
                 sh 'mvn deploy -s settings.xml'
+            }
+        }
+        */
+        stage('Upload Artifact'){
+            steps {
+                sh """
+                    curl -u faemillelyn.ballon@dxc.com:#Limitless4499 -X PUT \
+                    "https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot-local/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar" \
+                    -T target/my-app-1.0-SNAPSHOT.jar
+                """
             }
         }
         /*
@@ -45,6 +56,7 @@ pipeline {
             }
         }
         */
+
         stage('Deliver') { 
             steps {
                 sh './jenkins/scripts/deliver.sh' 
