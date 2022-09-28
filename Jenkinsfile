@@ -54,10 +54,12 @@ pipeline {
         stage('Deploy to Cloudhub') {
             steps {
                 sh """
+                    ls -a
                     curl -u foballon:#Limitless4499 "https://anypoint.mulesoft.com/cloudhub/api/v2/applications" \
-                    -X PUT -H 'Accept: */*' -d "{\n  \"action\": \"UPDATE\",\n  \"domains\": [\n    \"hello-world-asw\"\n  ]\n}" \
+                    -X PUT -H 'Accept: */*' -H 'Content-Type: application/json' -d 'property.json' \
                     -H "X-ANYPNT-ENV-ID: 71bedb3c-c2dc-468d-a113-a538a1111f1d"
                 """
+                //                    -X PUT -H 'Accept: */*' -d "{\n  \"action\": \"UPDATE\",\n  \"domains\": [\n    \"hello-world-asw\"\n  ]\n}" \
             }
         }
         /*
