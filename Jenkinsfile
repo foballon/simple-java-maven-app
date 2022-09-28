@@ -14,6 +14,8 @@ pipeline {
         skipStagesAfterUnstable()
     }
     environment{
+        def gitCommitHash = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
+        def gitCommitTimestamp = sh(returnStdout: true, script: "git log -1 --pretty='%cd' --date=format:'%Y.%m.%d-%H%M%S'").trim()
         jfrog_creds = credentials('jfrog-creds')
     }
 
@@ -44,7 +46,7 @@ pipeline {
             steps {
                 sh """
                     curl -u ${jfrog_creds} -X PUT \
-                    "https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot-local/mycompany/my-app-1.0-SNAPSHOT.jar" \
+                    "https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot-local/mycompany/my-app-1.0-SNAPSHOT.${gitCommitTimestamp}.${gitCommitTimestamp}.jar" \
                     -T target/my-app-1.0-SNAPSHOT.jar
                 """
             }
