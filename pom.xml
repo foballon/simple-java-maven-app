@@ -38,6 +38,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+  <!-- 
   <distributionManagement>
     <repository>
         <id>central</id>
@@ -50,4 +51,5 @@
         <url>https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot</url>
     </snapshotRepository>
   </distributionManagement>
+  -->
 </project>
