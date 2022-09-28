@@ -16,7 +16,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean install -s settings.xml'
+                sh 'mvn clean install'
+                //'mvn clean install -s settings.xml'
             }
         }
         stage('Check Artifact') {
@@ -39,8 +40,15 @@ pipeline {
             steps {
                 sh """
                     curl -u faemillelyn.ballon@dxc.com:#Limitless4499 -X PUT \
-                    "https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot-local/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar" \
+                    "https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot-local/mycompany/my-app-1.0-SNAPSHOT.jar" \
                     -T target/my-app-1.0-SNAPSHOT.jar
+                """
+            }
+        }
+
+        stage('Retrieve Artifact'){
+            steps{
+                sh """
                 """
             }
         }
