@@ -14,7 +14,7 @@ pipeline {
         skipStagesAfterUnstable()
     }
     environment{
-        jfrog-creds = credentials('jfrog-creds')
+        jfrog_creds = credentials('jfrog-creds')
     }
 
     stages {
@@ -43,7 +43,7 @@ pipeline {
         stage('Upload Artifact'){
             steps {
                 sh """
-                    curl -u ${jfrog-creds} -X PUT \
+                    curl -u ${jfrog_creds} -X PUT \
                     "https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot-local/mycompany/my-app-1.0-SNAPSHOT.jar" \
                     -T target/my-app-1.0-SNAPSHOT.jar
                 """
@@ -53,7 +53,7 @@ pipeline {
         stage('Retrieve Artifact'){
             steps{
                 sh """
-                     curl -u ${jfrog-creds} -X GET \
+                     curl -u ${jfrog_creds} -X GET \
                     "https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot-local/mycompany/my-app-1.0-SNAPSHOT.jar"
                     ls
                 """
