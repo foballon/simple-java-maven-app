@@ -46,7 +46,7 @@ pipeline {
             steps {
                 sh """
                     curl -u ${jfrog_creds} -X PUT \
-                    "https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot-local/mycompany/my-app-1.0-SNAPSHOT.${gitCommitTimestamp}.${gitCommitTimestamp}.jar" \
+                    "https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot-local/mycompany/my-app-1.0-SNAPSHOT.${gitCommitTimestamp}.${gitCommitHash}.jar" \
                     -T target/my-app-1.0-SNAPSHOT.jar
                 """
             }
