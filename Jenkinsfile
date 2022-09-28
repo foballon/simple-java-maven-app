@@ -56,7 +56,7 @@ pipeline {
                 sh """
                     curl -u foballon:#Limitless4499 "https://anypoint.mulesoft.com/cloudhub/api/v2/applications" \
                     -X PUT -H 'Accept: */*' -H 'Content-Type: application/json' -d "{\n  \"action\": \"UPDATE\",\n  \"domains\": [\n    \"hello-world-asw\"\n  ]\n}" \
-                    -H "X-ANYPNT-ENV-ID: '71bedb3c-c2dc-468d-a113-a538a1111f1d'"
+                    -H "X-ANYPNT-ENV-ID: 71bedb3c-c2dc-468d-a113-a538a1111f1d"
                 """
             }
         }
