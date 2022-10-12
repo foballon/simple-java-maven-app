@@ -38,8 +38,19 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-  <!-- 
+  
   <distributionManagement>
+    <repository>
+      <id>my-app-artifact</id>
+      <url>https://pkgs.dev.azure.com/foballon/client-project/_packaging/my-app-artifact/maven/v1</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  <!-- 
     <repository>
         <id>central</id>
         <name>a0nj0tqgvvycd-artifactory-primary-0-releases</name>
@@ -50,6 +61,7 @@
         <name>a0nj0tqgvvycd-artifactory-primary-0-snapshots</name>
         <url>https://wsa.jfrog.io/artifactory/wsaproject-libs-snapshot</url>
     </snapshotRepository>
-  </distributionManagement>
   -->
+  </distributionManagement>
+  
 </project>
