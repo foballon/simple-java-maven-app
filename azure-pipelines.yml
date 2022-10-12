@@ -20,9 +20,13 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
-- task: PublishPipelineArtifact@1
+# /*
+#   - task: PublishPipelineArtifact@1
+#     inputs:
+#       targetPath: '$(Pipeline.Workspace)'
+#       artifactType: 'pipeline'
+#       artifactName: 'my-app'
+# */
+- task: MavenAuthenticate@0
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifactType: 'pipeline'
-    artifactName: 'my-app'
+    artifactsFeeds: 'my-app-artifact'
