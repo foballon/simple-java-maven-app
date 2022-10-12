@@ -34,11 +34,9 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'deploy'
-    options: '-DrepositoryId=my-app-artifact -Durl=https://pkgs.dev.azure.com/foballon/client-project/_packaging/my-app-artifact/maven/v1'
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-
