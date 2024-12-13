@@ -1,4 +1,5 @@
 pipeline {
+    /*
     agent {
         docker {
             image 'maven:3-alpine'
@@ -6,9 +7,11 @@ pipeline {
             args '-u root:root -v "/var/run/docker.sock:/var/run/docker.sock:rw"'
         }
     }
+    */
     stages {
         stage('Build') {
             steps {
+                sh 'docker info'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
